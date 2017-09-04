@@ -1,5 +1,15 @@
+<h1>Resultados de busqueda de: {{txt}}</h1>
+
+<div class="row" *ngIf="result.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No Existen resultados con el nombre {{txt}}
+    </div>
+
+  </div>
+</div>
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let h of heroes; let i = index">
+    <div class="card animated fadeIn fast" *ngFor="let h of result; let i = index">
         <img class="card-img-top img-fluid" [src]="h.img" [alt]="h.nombre">
         <div class="card-block">
           <h4 class="card-title">{{h.nombre}}</h4>
